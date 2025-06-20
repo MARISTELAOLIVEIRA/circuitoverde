@@ -152,7 +152,7 @@ background:url('http://www.cssawds.com/ribbons/brand-award-right.png') no-repeat
 }
 
 .start{
-  background-image:  url("/static/floresta3.png")!important;
+  background-image:  url("/static/fundo.png")!important;
   background-size: cover;
 	background-position: center;
 	position: fixed;
