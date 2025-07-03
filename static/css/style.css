@@ -65,7 +65,7 @@ background:url('http://www.cssawds.com/ribbons/brand-award-right.png') no-repeat
 }
 
 .toggle-soft .toggle-on{
-	background: #2ecc71 !important;
+	background: #062e17 !important;
 }
 
 .toggle-soft .toggle-off{
@@ -152,7 +152,7 @@ background:url('http://www.cssawds.com/ribbons/brand-award-right.png') no-repeat
 }
 
 .start{
-  background-image:  url("/static/fundo.png")!important;
+  background-image:  url("/static/floresta.png")!important;
   background-size: cover;
 	background-position: center;
 	position: fixed;
