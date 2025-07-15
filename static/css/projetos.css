@@ -1,0 +1,159 @@
+body{
+	margin:0;
+	padding: 0;
+  background: #06170a;
+}
+.body{
+	position: fixed;
+	top: 10px;
+	left: 10px;
+	right: 10px;
+	bottom: 10px;
+	overflow-y: scroll;
+	transition: background .2s ease;
+}
+.nombre{
+	text-align: center;
+	text-shadow: 0px 10px rgba(46, 204, 113,.6);
+	color: white;
+  font-family: 'Raleway', sans-serif !important;
+  font-size: 50px;
+	font-weight: bold;
+	animation-delay: 0.5s;
+}
+
+.nombre p{
+	margin-top: 30px;
+
+}
+
+section {
+  width: 40em;
+  height: 25em;
+  margin: 0 auto;
+  left: 5%;
+  position: relative;
+  align-items: center;
+}
+
+li {
+  height: 540px;
+  width: 347px;
+  background:  #06170a;
+  display: inline-block;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  overflow: hidden;
+}
+
+li p {
+  color: white;
+  font-weight: bold;
+  font-size: 2em;
+  text-align: center;
+  margin-top: 1.175em;
+}
+
+.items {
+  position: absolute;
+}
+
+.main-pos {
+  margin-left: 2em !important;
+  z-index: 3000;
+  /*background-image: url('https://dl.dropbox.com/u/32649907/imgs/shadow.png');*/
+}
+
+.left-pos {
+  opacity: .3;
+  margin-left: -17em !important;
+  z-index: 1000;
+  -webkit-transform: scale(.75);
+  -moz-transform: scale(.75);
+  transform: scale(.75);
+}
+
+.back-pos {
+  margin-left: 2em !important;
+  opacity: .05;
+  -webkit-transform: scale(.5);
+  -moz-transform: scale(.5);
+  transform: scale(.5);
+}
+
+.right-pos {
+  opacity: .3;
+  margin-left:  21em !important;
+  z-index: 1000;
+  -webkit-transform: scale(.75);
+  -moz-transform: scale(.75);
+  transform: scale(.75);
+}
+
+span {
+  position: relative;
+  margin: 0 auto;
+  left: 17em;
+  top: 40em;
+}
+
+.controls {
+  position: absolute;
+  left: 55%;
+  margin-left: -10em;
+  top: 35em;
+  z-index: 1000;
+  background: rgba(20, 238, 31, 0.5);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(46, 204, 113, .6);
+  font-family: 'Raleway', sans-serif !important;
+  background-color: #06170a;
+
+}
+.scrollani {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 10px;
+  background-color: #f0f4f1;
+  color: rgb(15, 16, 15);
+	font: 1em/ 1.25 ubuntu, trebuchet ms, arial, sans-serif;
+}
+.scroll-indicator {
+  font-size: 18px;
+  color: #e2ece8;
+  text-shadow: 0px 10px rgba(46, 204, 113,.6);
+  animation: fadeIn 1s ease-in-out;
+  text-align: center;
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+#logo-fixa img {
+  height: 90px;  /* ou o tamanho que você quiser */
+  width: auto;
+  opacity: 0.95;
+  transition: transform 0.3s ease;
+  border: 2px solid #4CAF50; /* verde escuro ou tom da sua paleta */
+  border-radius: 8px; /* bordas levemente arredondadas */
+  background-color: #111; /* se quiser um fundo sutil */
+  padding: 4px; /* espaçamento entre a borda e a imagem */
+  position: fixed;
+	top: 15px;
+	left: 15px;
+
+}
+
+
+#logo-fixa img:hover {
+  transform: scale(1.05); /* efeito sutil ao passar o mouse */
+}
