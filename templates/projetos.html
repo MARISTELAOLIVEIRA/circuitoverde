@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+  <title>Simple CSS3/jQuery Carousel</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="/static/css/projetos.css">
+
+</head>
+<body>
+<div id="logo-fixa">
+  <a href="{{ url_for('index') }}">
+    <img src="{{ url_for('static', filename='img/logo2.png') }}" alt="Logo Circuito Verde">
+  </a>
+</div>
+      <div class="nombre animated fadeInLeft"><p><a href="/" style="color: inherit; text-decoration: none;" >PROJETOS</a></p>
+      </div>
+      <p class="scroll-indicator">Permaneça com cursor sobre o video que deseja assistir</p>
+
+<section>
+  <ul class="carousel">
+    <li class="items main-pos" id="1">
+      <img src="{{ url_for('static', filename='img/captura.png') }}" height="690" width="345" frameborder="0" scrolling="no"/>
+      
+      </li>
+    <li class="items right-pos" id="2">
+        <iframe src="https://assets.pinterest.com/ext/embed.html?id=703756187131252" height="714" width="347" frameborder="0" scrolling="no" ></iframe>
+      </li>
+    <li class="items back-pos" id="3">
+        <iframe src="https://assets.pinterest.com/ext/embed.html?id=1970393582657168" height="714" width="345" frameborder="0" scrolling="no" ></iframe>    
+      </li>
+    <li class="items back-pos" id="4">
+        <iframe src="https://assets.pinterest.com/ext/embed.html?id=16395986140327681" height="714" width="345" frameborder="0" scrolling="no" ></iframe>
+      </li>
+    <li class="items back-pos" id="5">
+        <iframe src="https://assets.pinterest.com/ext/embed.html?id=4081455904567755" height="714" width="345" frameborder="0" scrolling="no" ></iframe>    
+      </li>
+    <li class="items back-pos" id="6">
+        <iframe src="https://assets.pinterest.com/ext/embed.html?id=98938523060712600" height="714" width="345" frameborder="0" scrolling="no" ></iframe> 
+      </li>
+    <li class="items left-pos" id="7">
+        <iframe src="https://assets.pinterest.com/ext/embed.html?id=2392606047464650" height="714" width="345" frameborder="0" scrolling="no" ></iframe> 
+      </li>
+      <li class="items left-pos" id="8">
+        <iframe src="https://assets.pinterest.com/ext/embed.html?id=53409945577266044" height="714" width="345" frameborder="0" scrolling="no" ></iframe> 
+      </li>
+      <li class="items left-pos" id="9">
+        <iframe src="https://assets.pinterest.com/ext/embed.html?id=3518505954684833" height="714" width="345" frameborder="0" scrolling="no" ></iframe>
+      </li>
+      <li class="items left-pos" id="10">
+        <iframe src="https://assets.pinterest.com/ext/embed.html?id=1022317184135389614" height="714" width="345" frameborder="0" scrolling="no" ></iframe>      </li>
+  </ul>
+  
+<span class="controls" >
+  <input type="button" value="◀" id="prev">
+  <input type="button" value="▶" id="next">
+</span>
+
+</section>
+<!-- partial -->
+  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src='https://github.com/mattbryson/TouchSwipe-Jquery-Plugin/blob/master/jquery.touchSwipe.min.js'></script>
+  <script>
+//intervalo do slideshow
+var autoSwap = setInterval( swap,3500);
+
+//pausa o slideshow e reinicia ao sair com o mouse
+$('ul, span').hover(
+  function () {
+    clearInterval(autoSwap);
+}, 
+  function () {
+   autoSwap = setInterval( swap,3500);
+});
+
+//variáveis globais
+var items = [];
+var startItem = 1;
+var position = 0;
+var itemCount = $('.carousel li.items').length;
+var leftpos = itemCount;
+var resetCount = itemCount;
+
+//não utilizado: coleta o texto dentro da classe items
+$('li.items').each(function(index) {
+  items[index] = $(this).text();
+});
+
+//função para trocar as imagens
+function swap(action) {
+  var direction = action;
+  
+  //movendo o carrossel para trás
+
+  if(direction == 'counter-clockwise') {
+    var leftitem = $('.left-pos').attr('id') - 1;
+    if(leftitem == 0) {
+      leftitem = itemCount;
+    }
+    
+    $('.right-pos').removeClass('right-pos').addClass('back-pos');
+    $('.main-pos').removeClass('main-pos').addClass('right-pos');
+    $('.left-pos').removeClass('left-pos').addClass('main-pos');
+    $('#'+leftitem+'').removeClass('back-pos').addClass('left-pos');
+    
+    startItem--;
+    if(startItem < 1) {
+      startItem = itemCount;
+    }
+  }
+  
+  //movendo o carrossel para frente
+
+  if(direction == 'clockwise' || direction == '' || direction == null ) {
+    function pos(positionvalue) {
+      if(positionvalue != 'leftposition') {
+        //incrementar o id da lista de imagens
+        position++;
+        
+        //se o resultado final for maior que a contagem de imagens, redefinir a posição.
+        if((startItem+position) > resetCount) {
+          position = 1-startItem;
+        }
+      }
+    
+      //definindo o item posicionado à esquerda
+
+      if(positionvalue == 'leftposition') {
+        //a imagem posicionada à esquerda deve sempre estar uma posição à esquerda da imagem principal.
+        position = startItem - 1;
+      
+        //redefine a última imagem da lista para a posição da esquerda se a primeira imagem estiver na posição principal
+
+        if(position < 1) {
+          position = itemCount;
+        }
+      }
+   
+      return position;
+    }  
+  
+   $('#'+ startItem +'').removeClass('main-pos').addClass('left-pos');
+   $('#'+ (startItem+pos()) +'').removeClass('right-pos').addClass('main-pos');
+   $('#'+ (startItem+pos()) +'').removeClass('back-pos').addClass('right-pos');
+   $('#'+ pos('leftposition') +'').removeClass('left-pos').addClass('back-pos');
+
+    startItem++;
+    position=0;
+    if(startItem > itemCount) {
+      startItem = 1;
+    }
+  }
+}
+
+//next button click function
+$('#next').click(function() {
+  swap('clockwise');
+});
+
+//prev button click function
+$('#prev').click(function() {
+  swap('counter-clockwise');
+});
+
+//if any visible items are clicked
+$('li').click(function() {
+  if($(this).attr('class') == 'items left-pos') {
+     swap('counter-clockwise'); 
+  }
+  else {
+    swap('clockwise'); 
+  }
+});
+
+  </script>
+  <div class="scrollani">
+    <footer style="font-size:18px ">
+      &copy; Maristela 🐍 🌶️ 2025 | Circuito Verde
+    </footer>
+  </div>
+</body>
+</html>

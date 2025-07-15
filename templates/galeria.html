@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <title>Galeria Circuito Verde</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Saira:ital@0;1&family=Sour+Gummy:wdth,wght@125,300&display=swap" rel="stylesheet"><link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="/static/css/galeria.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='favicons/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicons/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicons/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ url_for('static', filename='favicons/manifest.json') }}">
+</head>
+<!-- partial:index.partial.html -->
+<html style="--n: 18">
+  <body>
+
+    <svg width="0" height="0" aria-hidden="true">
+      <filter id="grain">
+        <feTurbulence type="fractalNoise" baseFrequency="7.13"></feTurbulence>
+        <feColorMatrix type="saturate" values="0"></feColorMatrix>
+        <feComponentTransfer>
+          <feFuncA type="linear" slope=".02"></feFuncA>
+        </feComponentTransfer>
+        <feBlend in2="SourceGraphic"></feBlend>
+      </filter>
+    </svg>
+    <header>
+      <div id="logo-fixa">
+  <a href="{{ url_for('index') }}">
+    <img src="{{ url_for('static', filename='img/logo2.png') }}" alt="Logo Circuito Verde">
+  </a>
+</div>
+
+      <div class="nombre animated fadeInLeft"><p><a href="/" style="color: inherit; text-decoration: none;" >FOTOS</a></p></div>
+      <br>
+
+      <p class="scroll-indicator">Mova para cima ou para baixo &#9650; &#9660;</p>
+      <br>
+
+    </header>
+    <main class="scene">
+      <section class="assembly">
+        <article style="--i: 0; --url: url({{ url_for('static', filename='img/anel.jpeg') }}); --pos: 47% 35%">
+          <header>
+            <h2>Anel</h2><em>de trilha de placa</em>
+          </header>
+          <figure><img src="{{ url_for('static', filename='img/anel.jpeg') }}" />
+
+          </figure>
+        </article>
+        <article style="--i: 1; --url: url({{ url_for('static', filename='img/luminaria.jpeg') }}); --pos: 75% 65%">
+          <header>
+            <h2>Luminária</h2><em>Placas e leds</em>
+          </header>
+          <figure><img src="{{ url_for('static', filename='img/luminaria.jpeg') }}" />
+
+          </figure>
+        </article>
+        <article style="--i: 2; --url: url({{ url_for('static', filename='img/arara.jpeg') }}); --pos: 53% 43%">
+          <header>
+            <h2>Arara</h2><em>Placas e componentes</em>
+          </header>
+          <figure><img src="{{ url_for('static', filename='img/arara.jpeg') }}" />
+
+          </figure>
+        </article>
+        <article style="--i: 3; --url:  url({{ url_for('static', filename='img/arvoreled.jpeg') }}); --pos: 65% 65%">
+          <header>
+            <h2>Árvore</h2><em>Placas, leds e bateria</em>
+          </header>
+          <figure><img src="{{ url_for('static', filename='img/arvoreled.jpeg') }}" />
+
+          </figure>
+        </article>
+        <article style="--i: 4; --url: url({{ url_for('static', filename='img/colaresci.jpeg') }}); --pos: 50% 25%">
+          <header>
+            <h2>Colares</h2><em>Placas, fios e resina</em>
+          </header>
+          <figure><img src="{{ url_for('static', filename='img/colaresci.jpeg') }}" />
+
+          </figure>
+        </article>
+        <article style="--i: 5; --url: url({{ url_for('static', filename='img/arvoreled2.jpeg') }}); --pos: 47%">
+          <header>
+            <h2>Árvore de Natal</h2><em>Placas, leds e bateria</em>
+          </header>
+          <figure><img src="{{ url_for('static', filename='img/arvoreled2.jpeg') }}" alt="Árvore de Natal"/>
+
+          </figure>
+        </article>
+        <article style="--i: 6; --url: url({{ url_for('static', filename='img/chaveiro.png') }}); --pos: 47%">
+          <header>
+            <h2>Chaveiro</h2><em>Placas, fios e resina</em>
+          </header>
+          <figure><img src="{{ url_for('static', filename='img/chaveiro.png') }}" alt="Chaveiro"/>
+
+          </figure>
+        </article>
+        <article style="--i: 7; --url: url({{ url_for('static', filename='img/cnc.jpeg') }}); --pos: 65% 35%">
+          <header>
+            <h2>CNC</h2><em>Gravadora de DVD e Arduino</em>
+          </header>
+          <figure><img src="{{ url_for('static', filename='img/cnc.jpeg') }}" />
+
+          </figure>
+        </article>
+        <article style="--i: 8; --url: url({{ url_for('static', filename='img/relogiohd.jpeg') }})">
+          <header>
+            <h2>Relógio</h2><em>HD</em>
+          </header>
+          <figure><img src="{{ url_for('static', filename='img/relogiohd.jpeg') }}" alt="Relógio HD"/>
+          </figure>
+        </article>
+        <article style="--i: 9; --url: url({{ url_for('static', filename='img/cncarduino.jpeg') }}); --pos: 35%">
+          <header>
+            <h2>CNC</h2><em>Arduino, servo motores e sucata</em>
+          </header>
+          <figure><img src="{{ url_for('static', filename='img/cncarduino.jpeg') }}" alt="CNC Arduino e sucata"/>
+          </figure>
+        </article>
+        <article style="--i: 10; --url: url({{ url_for('static', filename='img/roboia.jpeg') }})">
+          <header>
+            <h2>Robo</h2><em>Arduino, motores, sensores e micro Python</em>
+          </header>
+          <figure><img src="{{ url_for('static', filename='img/roboia.jpeg') }}" alt="Robo"/>
+          </figure>
+        </article>
+        <article style="--i: 11; --url: url({{ url_for('static', filename='img/espelho.jpeg') }}); --pos: 43% 47%">
+          <header>
+            <h2>Espelho Smart</h2><em>Sucata, Raspberry Pi</em>
+          </header>
+          <figure><img src="{{ url_for('static', filename='img/espelho.jpeg') }}" alt="Espelho Smart"/>
+          </figure>
+        </article>
+        <article style="--i: 12; --url: url({{ url_for('static', filename='img/joiasmart.jpeg') }}); --pos: 65% 35%">
+          <header>
+            <h2>Joia</h2><em>Arame, led e bateria de PC reciclada</em>
+          </header>
+          <figure><img src="{{ url_for('static', filename='img/joiasmart.jpeg') }}" alt="Joia"/>
+          </figure>
+        </article>
+        <article style="--i: 13; --url: url({{ url_for('static', filename='img/lixeira.jpeg') }})">
+          <header>
+            <h2>Lixeira automática</h2><em>Arduino, sensor ultrassônico e servo motor</em>
+          </header>
+          <figure><img src="{{ url_for('static', filename='img/lixeira.jpeg') }}" alt="Lixeira automática"/>
+          </figure>
+        </article>
+        <article style="--i: 14; --url: url({{ url_for('static', filename='img/roboticaarduino.jpeg') }}); --pos: 50% 25%">
+          <header>
+            <h2>Robo</h2><em>Arduino, sensores e atuadores</em>
+          </header>
+          <figure><img src="{{ url_for('static', filename='img/roboticaarduino.jpeg') }}" alt="Robo"/>
+          </figure>
+        </article>
+        <article style="--i: 15; --url: url({{ url_for('static', filename='img/teclas.jpeg') }})">
+          <header>
+            <h2>Arte com teclas</h2><em>Sucata eletrônica</em>
+          </header>
+          <figure><img src="{{ url_for('static', filename='img/teclas.jpeg') }}" alt=""/>
+
+          </figure>
+        </article>
+        <article style="--i: 16; --url:url({{ url_for('static', filename='img/brincos.jpeg') }}); --pos: 57%">
+          <header>
+            <h2>Brincos</h2><em>Componentes de sucata eletrônica</em>
+          </header>
+          <figure><img src="{{ url_for('static', filename='img/brincos.jpeg') }}" alt=""/>
+          </figure>
+        </article>
+        <article style="--i: 17; --url: url({{ url_for('static', filename='img/chaveiro2.jpeg') }}); --pos: 43% 35%">
+          <header>
+            <h2>Chaveiro</h2><em>Placa de sucata eletrônica</em>
+          </header>
+          <figure><img src="{{ url_for('static', filename='img/chaveiro2.jpeg') }}" alt="chaveiro"/>
+          </figure>
+        </article>
+      </section>
+    </main>
+    <footer style="font-size:18px">
+    &copy; Maristela 🐍 🌶️ 2025 | Circuito Verde
+    </footer>
+    <!-- just support info-->
+    <aside>
+      <p class="box-info-scrollani">Desculpe, seu navegador não parece suportar animação baseada em rolagem. A partir de janeiro de 2025, isso é suportado no Firefox se a flag <kbd>layout.css.scroll-driven-animations.enabled</kbd> estiver definida como verdadeira em <kbd>about:config</kbd> e em navegadores Chromium. O suporte ao Safari está a caminho, mas ainda não chegou.</p>
+    </aside>
+<div id="scroll-indicator-top">
+  <i class="fa fa-angle-down fa-2x"></i>
+</div>
+      <script>
+function f(k) {
+	if(Math.abs(k) > .5)
+		scrollTo(0, .5*(k - Math.sign(k) + 1)*(document.documentElement.offsetHeight - window.innerHeight))
+}
+
+f(-1);
+
+addEventListener('scroll', e => f(+getComputedStyle(document.body).getPropertyValue('--k')))
+
+  </body>
+</html>
+<!-- partial -->
+  <script>
+function f(k) {
+	if(Math.abs(k) > .5)
+		scrollTo(0, .5*(k - Math.sign(k) + 1)*(document.documentElement.offsetHeight - window.innerHeight))
+}
+
+f(-1);
+
+addEventListener('scroll', e => f(+getComputedStyle(document.body).getPropertyValue('--k')))
+  </script>
+
+</body>
+</html>
