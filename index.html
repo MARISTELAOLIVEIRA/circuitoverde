@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
   <title>Circuito Verde</title>
-    <link rel="stylesheet" href="/static/css/style.css">
-    <link rel="stylesheet" href="/static/css/css.css">
-    <link rel="stylesheet" href="/static/css/menu.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/css.css">
+    <link rel="stylesheet" href="static/css/menu.css">
     <!--Font awesome-->
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css">
@@ -17,10 +17,7 @@
     <link href="https://fonts.googleapis.com/css?family=Arvo:700" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway:900" rel="stylesheet"> 
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon/favicon-32x32.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon/favicon-16x16.png') }}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='favicon/apple-touch-icon.png') }}">
-    <link rel="manifest" href="{{ url_for('static', filename='favicon/site.webmanifest') }}">
+    <link rel="manifest" href="static/favicons/favicons_with_manifest/manifest.json">
     <link rel="stylesheet" type="text/css" href="https://pixmy.github.io/toggles-full.css">
     <!--JQUERY-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -30,16 +27,12 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toggles/2.0.4/toggles.min.js"></script>
      <!-- Favicons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='favicons/apple-touch-icon.png') }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicons/favicon-32x32.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicons/favicon-16x16.png') }}">
-    <link rel="manifest" href="{{ url_for('static', filename='favicons/manifest.json') }}">
     <meta name="theme-color" content="#003300">
 
     <!-- PWA Support -->
 <script>
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('{{ url_for('static', filename='favicons/service-worker.js')}}')
+    navigator.serviceWorker.register('static/favicons/favicons_pwa_ready/service-worker.js')
       .then(function(reg) { console.log('✅ Service Worker registrado!', reg); })
       .catch(function(err) { console.error('❌ Erro ao registrar Service Worker:', err); });
   }
@@ -52,7 +45,7 @@
             <nav class="main-menu">
             <ul>
                 <li>
-                    <a href="{{ url_for('index') }}">
+                    <a href="index.html">
                         <i class="fa fa-home fa-2x"></i>
                         <span class="nav-text">
                            Home
@@ -110,17 +103,9 @@
                         </span>
                     </a>  
                 </li>
-                <li class="has-subnav">
-                    <a href="https://vozear.stela.tec.br" target="_blank">
-                       <i class="fa fa-volume-up fa-2x"></i>
-                        <span class="nav-text">
-                            Projeto Vozear
-                        </span>
-                    </a>  
-                </li>
                  
                 <li class="has-subnav">
-                    <a href="{{ url_for('galeria') }}">
+                    <a href="galeria.html">
                        <i class="fa fa-camera fa-2x"></i>
                         <span class="nav-text">
                             Fotos
@@ -129,7 +114,7 @@
                    
                 </li>
                 <li>
-                    <a href="{{ url_for('projetos') }}">
+                    <a href="projetos.html">
                         <i class="fa fa-film fa-2x"></i>
                         <span class="nav-text">
                             Vídeos
@@ -168,12 +153,11 @@
         <div class="toggle toggle-soft"></div>
     <div class="hire" id="hire"><i class="fa fa-handshake-o animated swing infinite" style="width: 20px; height: 20px;"></i>
         <div class="info display"><div class="correo">
-            <span class="ingles"><a  style="text-decoration: none; color: white; font-size: 25px;" href="mailto:contato@circuitoverde.tec.br">maristela@circuitoverde.tec.br</a></span>
+            <span class="ingles"><a  style="text-decoration: none; color: white; font-size: 25px;" href="mailto:contato@circuitoverde.tec.br">maristela33781197@edu.df.senac.br</a></span>
             <span style="color: white; font-size: 8px; font-weight: bold;">
                 <br>
                 <br>
                 
-            <p> <a href="https://stela.tec.br" target="_blank" rel="noopener noreferrer">Maristela</a> </p>
         </div>
             <div class="tel"><i class="fa"></i></div>
         </div>
@@ -214,7 +198,7 @@
                 
             </div>
             
-            <div class="squareImage show1 hidden"><img class="image school" src="{{ url_for('static', filename='img/logo.png') }}" style="background-color:white;"></div>
+            <div class="squareImage show1 hidden"><img class="image school" src="static/img/logo.png" style="background-color:white;"></div>
             <div class="squareText sobreMi show1 hidden">
                 
                 <p class="fontemediun">
@@ -256,7 +240,7 @@
                     <div class="habilidad show2 hidden" >
                         <div class="habilidadIcon"  >
                             HTML5
-                            <img src="{{ url_for('static', filename='img/html5-original.svg') }}" alt="HTML5 logo consisting of a stylized orange shield with a white number 5 in the center, representing web development technology. The logo appears bold and modern, conveying a sense of innovation and reliability. No additional text or background elements are present.">
+                            <img src="static/img/html5-original.svg" alt="Logo HTML5">
                         </div>
                         
                     </div>
@@ -264,7 +248,7 @@
                     <div class="habilidad show2 hidden">
                         <div class="habilidadIcon">
                             CSS3
-                            <img src="{{ url_for('static', filename='img/css3-original.svg') }}" alt="CSS3 logo consisting of a stylized blue shield with a white number 3 in the center, representing web development technology. The logo appears bold and modern, conveying a sense of innovation and reliability. No additional text or background elements are present.">
+                            <img src="static/img/css3-original.svg" alt="Logo CSS3">
                         </div>
                         
                     </div>
@@ -272,7 +256,7 @@
                     <div class="habilidad show2 hidden">
                         <div class="habilidadIcon">
                             JAVASCRIPT
-                            <img src="{{ url_for('static', filename='img/javascript-original.svg') }}" alt="JavaScript logo consisting of a stylized yellow shield with a black number 1 in the center, representing web development technology. The logo appears bold and modern, conveying a sense of innovation and reliability. No additional text or background elements are present.">
+                            <img src="static/img/javascript-original.svg" alt="Logo JavaScript">
                         </div>
                         
                     </div>
@@ -280,7 +264,7 @@
                     <div class="habilidad show2 hidden">
                         <div class="habilidadIcon">
                             PYTHON
-                            <img src="{{ url_for('static', filename='img/python-original.svg') }}" alt="Python logo consisting of a stylized blue and yellow snake, representing programming language technology. The logo appears bold and modern, conveying a sense of innovation and reliability. No additional text or background elements are present.">
+                            <img src="static/img/python-original.svg" alt="Logo Python">
                         </div>
                        
                     </div>
@@ -288,7 +272,7 @@
                     <div class="habilidad show2 hidden">
                         <div class="habilidadIcon">
                             GOOGLE
-                            <img src="{{ url_for('static', filename='img/google-original.svg') }}" alt="Flask logo consisting of a stylized blue flask, representing web development technology. The logo appears bold and modern, conveying a sense of innovation and reliability. No additional text or background elements are present.">
+                            <img src="static/img/google-original.svg" alt="Logo Google">
                         </div>
                         
                     </div>
@@ -296,7 +280,7 @@
                     <div class="habilidad show2 hidden">
                         <div class="habilidadIcon">
                             MYSQL
-                            <img src="{{ url_for('static', filename='img/mysql-original.svg') }}" alt="MySQL logo consisting of a stylized blue elephant, representing database technology. The logo appears bold and modern, conveying a sense of innovation and reliability. No additional text or background elements are present.">
+                            <img src="static/img/mysql-original.svg" alt="Logo MySQL">
                         </div>
                         
                     </div>
@@ -304,7 +288,7 @@
                     <div class="habilidad show2 hidden">
                         <div class="habilidadIcon">
                             GITHUB
-                            <img src="{{ url_for('static', filename='img/github-original.svg') }}" alt="GitHub logo consisting of a stylized black cat, representing version control technology. The logo appears bold and modern, conveying a sense of innovation and reliability. No additional text or background elements are present.">
+                            <img src="static/img/github-original.svg" alt="Logo GitHub">
                         </div>
                         
                     </div>
@@ -312,35 +296,35 @@
                     <div class="habilidad show2 hidden">
                         <div class="habilidadIcon">
                             DJANGO
-                                <img src="{{ url_for('static', filename='img/django-plain.svg') }}" alt="Canva logo consisting of a stylized letter C, representing graphic design technology. The logo appears bold and modern, conveying a sense of innovation and reliability. No additional text or background elements are present.">
+                                <img src="static/img/django-plain.svg" alt="Logo Django">
                         </div>
                        
                     </div>
                     <div class="habilidad show2 hidden">
                         <div class="habilidadIcon">
                             ARDUINO
-                            <img src="{{ url_for('static', filename='img/arduino-original.svg') }}" alt="Arduino logo consisting of a stylized blue and yellow infinity symbol, representing open-source hardware technology. The logo appears bold and modern, conveying a sense of innovation and reliability. No additional text or background elements are present.">
+                            <img src="static/img/arduino-original.svg" alt="Logo Arduino">
                         </div>
                         
                     </div>
                      <div class="habilidad show2 hidden">
                         <div class="habilidadIcon">
                             VSCODE
-                            <img src="{{ url_for('static', filename='img/vscode-original.svg') }}" alt="VSCode logo consisting of a stylized blue square with a white play button, representing code editing technology. The logo appears bold and modern, conveying a sense of innovation and reliability. No additional text or background elements are present.">
+                            <img src="static/img/vscode-original.svg" alt="Logo VS Code">
                         </div>
                         
                     </div>
                     <div class="habilidad show2 hidden">
                         <div class="habilidadIcon">
                             AZURE
-                            <img src="{{ url_for('static', filename='img/azure-original.svg') }}" alt="Azure logo consisting of a stylized blue cloud, representing cloud computing technology. The logo appears bold and modern, conveying a sense of innovation and reliability. No additional text or background elements are present.">
+                            <img src="static/img/azure-original.svg" alt="Logo Azure">
                         </div>
                         
                     </div>
                     <div class="habilidad show2 hidden">
                         <div class="habilidadIcon">
                             AWS
-                            <img src="{{ url_for('static', filename='img/amazonwebservices-original-wordmark.svg') }}" alt="AWS logo consisting of a stylized orange and black design, representing cloud computing technology. The logo appears bold and modern, conveying a sense of innovation and reliability. No additional text or background elements are present.">
+                            <img src="static/img/amazonwebservices-original-wordmark.svg" alt="Logo AWS">
                         </div>
                         
                     </div>
@@ -381,7 +365,7 @@
         
                 </p>
             </div>
-            <div class="squareImage show3 hidden"><img class="image sqljudge" src="{{ url_for('static', filename='img/note.gif') }}"></div>
+            <div class="squareImage show3 hidden"><img class="image sqljudge" src="static/img/note.gif"></div>
         </div>
       <div>
         <br>
@@ -390,7 +374,7 @@
       </div>
         <div class="square" id="fourth" style="background-color:white;">
             <div class="squareTitle"><span class="squareSubTitle">Em desenvolvimento</span></div>
-            <div class="squareImage show4 hidden"><img class="image school" src="{{ url_for('static', filename='img/engrenagem.png') }}"></div>
+            <div class="squareImage show4 hidden"><img class="image school" src="static/img/engrenagem.png"></div>
             <div class="squareText trabajo show4 hidden">
                     
         <p class="fontemediun" style="color:rgb(7, 14, 9);">
@@ -419,7 +403,7 @@
         <br>
         </p>
 
-        <div class="squareImage show4 hidden"><img class="image school" src="{{ url_for('static', filename='img/engrenagem.png') }}"></div>
+        <div class="squareImage show4 hidden"><img class="image school" src="static/img/engrenagem.png"></div>
         <br>
         <br>
             </div>
@@ -467,7 +451,7 @@
                     <p></p>               
                 </p>
             </div>
-            <div class="squareImage show5 hidden"><img class="image school" src="{{ url_for('static', filename='img/maker.png') }}"></div>
+            <div class="squareImage show5 hidden"><img class="image school" src="static/img/maker.png"></div>
         </div>
       <div>
         <br>
@@ -521,7 +505,7 @@
 
 
   <footer style="font-size:18px">
-    &copy; <a href="https://stela.tec.br" target="_blank" rel="noopener noreferrer">Maristela</a> 🐍 🌶️ 2025 | Circuito Verde
+    &copy; Profª Maristela 2026 | Circuito Verde
 </footer>
     </div>
 
